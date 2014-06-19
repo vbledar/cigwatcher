@@ -11,6 +11,8 @@
 /ivy*
 /eclipse
 /target
+/out
+
 /*.iml
 
 # default HSQL database files for production mode
