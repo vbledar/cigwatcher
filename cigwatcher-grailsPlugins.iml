@@ -9,6 +9,14 @@
         <sourceRoots />
       </configuration>
     </facet>
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map>
+          <unit-entry name="Gorm" />
+        </datasource-map>
+        <naming-strategy-map />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -32,13 +40,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="grails-2.0.4" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.0.4" level="application" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (cigwatcher-grailsPlugins)">
         <CLASSES>
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/resources/zips/resources-1.1.6.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/jquery/zips/jquery-1.7.1.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/hibernate/zips/hibernate-2.0.4.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/tomcat/zips/tomcat-2.0.4.zip!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.16.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

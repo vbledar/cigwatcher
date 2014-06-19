@@ -4,11 +4,27 @@
             ${packetInformation?.packetName}
         </h2>
 
-        <p><strong>Yoy have smocked 150 packets and paid 250 euros.</strong></p>
+        <p>
 
-        <p class="">
-            <g:formatDate date="${packetInformation?.dateCreated}" format="DD/MM/yyyy" />
         </p>
+
+        <ul>
+            <li>
+                <p>
+                    <g:message code="packet.info.description.packets.and.cigars" args="[packetInformation?.packetsBought, packetInformation?.totalPaid()]"/>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <g:message code="packet.info.description.last.packet.date" args="[packetInformation?.lastPacketBought]" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <g:message code="packet.info.description.created.on" args="[packetInformation?.dateCreated]" />
+                </p>
+            </li>
+        </ul>
 
         <span class="ui-li-aside">
             <button id="deleteEntry" data-item-id="${packetInformation?.id}" class="ui-btn ui-btn-inline ui-mini neon-shadow-light delete-packet-info-entry">

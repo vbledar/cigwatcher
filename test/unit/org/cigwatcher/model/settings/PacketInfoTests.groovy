@@ -3,6 +3,7 @@ package org.cigwatcher.model.settings
 
 
 import grails.test.mixin.*
+import org.cigwatcher.model.user.User
 import org.junit.*
 
 /**
@@ -11,7 +12,18 @@ import org.junit.*
 @TestFor(PacketInfo)
 class PacketInfoTests {
 
-    void testSomething() {
-       fail "Implement me"
+    void packetInfoCreation() {
+        // mock user instance
+        User user = mockDomain(User)
+
+        // create packet info instance
+        PacketInfo packetInfo = new PacketInfo(packetName: "Marlboroasdfa", price: 3.40, cigCount: 20)
+        packetInfo.user = user
+
+        // assert saving the instance
+        assertNull packetInfo.save()
+
+        packetInfo.packetName = 'Marlboro'
+        assertNotNull packetInfo.save()
     }
 }
