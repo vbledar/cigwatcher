@@ -1,0 +1,150 @@
+
+
+.neon-shadow-light {
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(0,166,255,1) !important;
+    -moz-box-shadow: 0px 0px 1px 1px rgba(0,166,255,1) !important;
+    box-shadow: 0px 0px 1px 1px rgba(0,166,255,1) !important;
+}
+
+/** ************* **
+ * Div spacing css *
+ ** ************* **/
+.self-up-separator5 {
+    margin-top: 5px !important;
+}
+
+.self-up-separator10 {
+    margin-top: 10px !important;
+}
+
+.self-up-separator15 {
+    margin-top: 15px !important;
+}
+
+.self-up-separator20 {
+    margin-top: 20px !important;
+}
+
+.self-down-separator5 {
+    margin-bottom: 5px !important;
+}
+
+.self-down-separator10 {
+    margin-bottom: 10px !important;
+}
+
+.self-down-separator15 {
+    margin-bottom: 15px !important;
+}
+
+.self-down-separator20 {
+    margin-bottom: 20px !important;
+}
+
+.spacer5 {
+    margin-top: 5px;
+}
+
+.spacer10 {
+    margin-top: 10px;
+}
+
+.spacer15 {
+    margin-top: 15px;
+}
+
+.spacer20 {
+    margin-top: 20px;
+}
+
+.full-line-black {
+    border-bottom: 1px solid lightgray;
+    padding-top: 5px;
+    margin-bottom: 5px;
+
+    -webkit-box-shadow: 1px 22px 30px -10px rgba(255,255,255,1);
+    -moz-box-shadow: 1px 22px 30px -10px rgba(255,255,255,1);
+    box-shadow: 1px 22px 30px -10px rgba(255,255,255,1);
+}
+
+.full-line {
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+
+    /*max-width: 95%;*/
+    /*min-width: 95%;*/
+    /*width: 95%;*/
+
+    border-bottom: 1px solid white;
+    padding-top: 5px;
+    margin-bottom: 5px;
+
+    -webkit-box-shadow: 1px 22px 30px -10px rgba(255,255,255,1);
+    -moz-box-shadow: 1px 22px 30px -10px rgba(255,255,255,1);
+    box-shadow: 1px 22px 30px -10px rgba(255,255,255,1);
+}
+
+/** ***************** **
+ * Div spacing css end *
+ ** ***************** **/
+
+
+/** ***************** **
+ * Grouping object css *
+ ** ***************** **/
+.info-panel {
+    /*background-color: rgba(255, 255, 255, 0.9);*/
+
+    border-bottom: 1px solid dodgerblue;
+    border-left:  1px solid dodgerblue;
+    border-right: 1px solid dodgerblue;
+
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+
+    -webkit-box-shadow: inset 0px 15px 15px -10px rgba(2, 149, 247, 0.75);
+    -moz-box-shadow:    inset 0px 15px 15px -10px rgba(2, 149, 247, 0.75);
+    box-shadow:         inset 0px 15px 15px -10px rgba(2, 149, 247, 0.75);
+
+    padding-top: 10px !important;
+
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.info-panel > h1, h2 , h3, h4, h5 {
+    color: darkorange;
+}
+
+input.field-error {
+    -webkit-box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+    -moz-box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+    box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+}
+
+div.field-error {
+    -webkit-box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+    -moz-box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+    box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+}
+
+li.field-error {
+    -webkit-box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+    -moz-box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+    box-shadow: 0px 0px 1px 3px rgba(255,0,0,1) !important;
+}
+
+div.error-list {
+    -webkit-box-shadow: 0px 0px 1px 3px darkorange !important;
+    -moz-box-shadow: 0px 0px 1px 3px darkorange !important;
+    box-shadow: 0px 0px 1px 3px darkorange !important;
+}
+/** ********************* **
+ * Grouping object css end *
+ ** ********************* **/

@@ -1,0 +1,17 @@
+# web application files
+/web-app/WEB-INF/classes
+  
+# IDE support files
+/.classpath
+/.launch
+/.project
+/.settings
+/*.launch
+/*.tmproj
+/ivy*
+/eclipse
+/target
+
+# default HSQL database files for production mode
+/prodDb.*
+.idea
