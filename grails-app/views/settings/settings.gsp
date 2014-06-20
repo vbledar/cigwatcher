@@ -18,6 +18,9 @@
 
 <body>
 
+<content tag="pageElementCreation">
+    <div data-role="page" id="settings" data-theme="b">
+</content>
 
 <content tag="headerTitle">
     <h1>

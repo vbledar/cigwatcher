@@ -1,5 +1,6 @@
 package org.cigwatcher.model.settings
 
+import org.cigwatcher.model.campaign.Packet
 import org.cigwatcher.model.user.User
 
 class PacketInfo {
@@ -19,12 +20,15 @@ class PacketInfo {
 
     static belongsTo = [user: User]
 
+    static hasMany = [packets: Packet]
+
     static constraints = {
-        packetName nullable: false, size: 3..12
+        packetName nullable: false, size: 3..30
         price nullable: false, max: 999D
         cigCount nullable: false, max: 50
         user nullable: false
         lastPacketBought nullable: true
+        packets nullable: true
     }
 
     Double totalPaid() {

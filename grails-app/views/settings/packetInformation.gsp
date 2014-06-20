@@ -100,7 +100,7 @@
         <li class="ui-body ui-body-b">
             <fieldset class="ui-grid-a">
                 <div class="ui-block-a" style="padding: 5px;">
-                    <g:link controller="settings" action="deletePacketInfo" class="ui-btn neon-shadow-light">
+                    <g:link controller="settings" action="settings" params="[instanceId: packetInformation?.id, service: 'deletePacketInfo']" data-rel="external" data-transition="slide" data-direction="reverse" class="ui-btn neon-shadow-light">
                         <g:message code="delete.button.label" default="Delete" />
                     </g:link>
                 </div>

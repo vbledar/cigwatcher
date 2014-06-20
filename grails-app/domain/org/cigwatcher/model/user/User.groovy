@@ -1,5 +1,7 @@
 package org.cigwatcher.model.user
 
+import org.cigwatcher.model.campaign.Campaign
+import org.cigwatcher.model.campaign.Packet
 import org.cigwatcher.model.settings.PacketInfo
 
 class User {
@@ -14,7 +16,9 @@ class User {
 
     Boolean recieveNotifications = Boolean.TRUE // user allows application to send notifications
 
-    static hasMany = [packetInfos: PacketInfo]
+    Campaign currentCampaign // the current campaign the user is running
+
+    static hasMany = [packetInfos: PacketInfo, packets: Packet, campaigns: Campaign]
 
     static constraints = {
         username (nullable: false, minSize: 5, maxSize: 12)
@@ -23,5 +27,9 @@ class User {
         lastname (nullable: false, minSize: 2, maxSize: 25)
         email (email: true, nullable: true)
         recieveNotifications (nullable: false)
+        currentCampaign nullable: true
+        packetInfos nullable: true
+        packets nullable: true
+        campaigns nullable: true
     }
 }

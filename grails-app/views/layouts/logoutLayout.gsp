@@ -7,6 +7,12 @@
     </head>
     <body>
 
+    <g:if test="${pageProperty(name: "page.pageElementCreation")}">
+        <content tag="pageElementCreation">
+            <g:pageProperty name="page.pageElementCreation" />
+        </content>
+    </g:if>
+
     <content tag="headerNavigation">
         <g:if test="${pageProperty(name: 'page.leftHeader')}">
             <g:pageProperty name="page.leftHeader"/>

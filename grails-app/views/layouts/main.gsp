@@ -20,7 +20,12 @@
 	<body>
 
 
-    <div data-role="page" data-theme="b">
+    <g:if test="${pageProperty(name: "page.pageElementCreation")}">
+        <g:pageProperty name="page.pageElementCreation" />
+    </g:if>
+    <g:else>
+        <div data-role="page" data-theme="b">
+    </g:else>
 
         %{-- Header Construction --}%
         <div data-role="header" data-position="fixed">

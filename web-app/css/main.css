@@ -118,8 +118,12 @@
     padding-right: 10px;
 }
 
-.info-panel > h1, h2 , h3, h4, h5 {
-    color: darkorange;
+div.inside-anchor-with-details h1 h2 h3 h4 h5 h6 {
+    color: darkorange !important;
+}
+
+.info-panel > h1 h2 h3 h4 h5 {
+    color: darkorange !important;
 }
 
 input.field-error {

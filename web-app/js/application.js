@@ -42,9 +42,6 @@ function execARFromElementWithSuccessAndErrorCallbacks(event, element, successCa
     } catch (e) {
         console.log (e.message);
 
-        // hide the spinner
-//        hideSpinner();
-
         // make the error callback
         errorCallback(event, element, e.message);
     }
@@ -69,17 +66,11 @@ function execARFromElementWithSuccessAndErrorCallbacks(event, element, successCa
  * @param errorCallback, called if the request failed
  */
 function execARWithSuccessAndErrorCallbacks(event, element, actionUrl, parameters, successCallback, errorCallback) {
-    // show loading spinner
-    console.log("Showing the spinner prior to request execution");
-//    showSpinner();
 
     // execute post request
     console.log("Executing post request to server.");
     $.post(actionUrl, parameters, function (data, textStatus, jqXHR) {
         console.log('Post request succeeded...');
-
-        // hide the spinner
-//        hideSpinner();
 
         // data retrieved from server
         console.log(data);
@@ -89,9 +80,6 @@ function execARWithSuccessAndErrorCallbacks(event, element, actionUrl, parameter
 
     }).fail(function (data) {
         console.debug('Post request failed...');
-
-        // hide the spinner
-//        hideSpinner();
 
         // make the error callback
         errorCallback(event, element, data);

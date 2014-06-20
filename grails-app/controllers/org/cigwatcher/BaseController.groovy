@@ -33,6 +33,20 @@ class BaseController {
     }
 
     /**
+     * Retrieve user instance from database. The user in session instance
+     * has no open connections and retrieving information of sets and arrays
+     * would throw an exception.
+     *
+     * This method will initialize a User instance from the database.
+     *
+     * @return <code>User</code> the logged in user instance from database.
+     */
+    User getLoggedInUser() {
+        User userInSession = session["user"]
+        return User.get(userInSession.id)
+    }
+
+    /**
      * Checks if a user instance object is stored in session. If that is
      * the case then we define that a user is logged in.
      *

@@ -1,5 +1,5 @@
 <li id="packet-info-entry-${packetInformation?.id}">
-    <g:link controller="settings" action="packetInformation" id="${packetInformation?.id}">
+    <g:link controller="settings" action="settings" params="[service: 'packetInformation', instanceId: packetInformation?.id, execreturn: Boolean.TRUE]">
         <h2>
             ${packetInformation?.packetName}
         </h2>
@@ -16,7 +16,7 @@
             </li>
             <li>
                 <p>
-                    <g:message code="packet.info.description.last.packet.date" args="[packetInformation?.lastPacketBought]" />
+                    <g:message code="packet.info.description.last.packet.date" args="[packetInformation?.lastPacketBought ? packetInformation : 'unknown']" />
                 </p>
             </li>
             <li>
