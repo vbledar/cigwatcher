@@ -42,6 +42,8 @@ class SettingsController {
         bindData(packetInfo, params)
         log.error 'Packet packetName: ' + packetInfo.packetName
 
+        packetInfo.validate()
+
         if (!packetInfo.save()) {
             packetInfo.errors.each {
                 log.error it
