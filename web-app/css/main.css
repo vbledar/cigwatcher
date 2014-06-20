@@ -6,6 +6,29 @@
     box-shadow: 0px 0px 1px 1px rgba(0,166,255,1) !important;
 }
 
+.ui-button-orange {
+    /*background-color: #666;*/
+
+    padding: 15px;
+
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid rgba(0,166,255,1);
+
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,166,255,1) !important;
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,166,255,1) !important;
+    box-shadow: 0px 0px 15px 0px rgba(0,166,255,1) !important;
+}
+
+.ui-button-orange:hover {
+    -webkit-box-shadow: inset 0px 0px 34px 0px rgba(0,166,255,1) !important;
+    -moz-box-shadow: inset 0px 0px 34px 0px rgba(0,166,255,1) !important;
+    box-shadow: inset 0px 0px 34px 0px rgba(0,166,255,1) !important;
+
+    border: 1px solid rgba(0,166,255,1);
+}
+
 /** ************* **
  * Div spacing css *
  ** ************* **/
@@ -68,13 +91,6 @@
 }
 
 .full-line {
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-
-    /*max-width: 95%;*/
-    /*min-width: 95%;*/
-    /*width: 95%;*/
-
     border-bottom: 1px solid white;
     padding-top: 5px;
     margin-bottom: 5px;
@@ -93,8 +109,6 @@
  * Grouping object css *
  ** ***************** **/
 .info-panel {
-    /*background-color: rgba(255, 255, 255, 0.9);*/
-
     border-bottom: 1px solid dodgerblue;
     border-left:  1px solid dodgerblue;
     border-right: 1px solid dodgerblue;
@@ -124,6 +138,35 @@ div.inside-anchor-with-details h1 h2 h3 h4 h5 h6 {
 
 .info-panel > h1 h2 h3 h4 h5 {
     color: darkorange !important;
+}
+
+div.default-informational {
+    text-align: center;
+}
+
+div.default-informational p {
+    text-align: justify;
+}
+
+div.default-informational ul {
+    margin: 20px;
+    text-align: left;
+
+    font-size: 10px;
+}
+
+div.default-informational h1,
+div.default-informational h2,
+div.default-informational h3,
+div.default-informational h4,
+div.default-informational h5
+{
+    color: darkorange !important;
+    text-shadow: 0px 5px 5px rgba(0,0,0,1); /* 50% white from bottom */
+}
+
+div.default-informational ul {
+    list-style: none;
 }
 
 input.field-error {

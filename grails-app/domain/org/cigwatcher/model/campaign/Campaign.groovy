@@ -4,7 +4,10 @@ import org.cigwatcher.model.user.User
 
 class Campaign {
 
-    Integer daysCounter
+    Integer daysCounter = 30
+
+    Integer currentCigarCounter = 20
+    Integer targetCigarCounter = 10
 
     Integer cigarCounter = 0
     Integer packetCounter = 0
@@ -23,6 +26,8 @@ class Campaign {
 
     static constraints = {
         daysCounter nullable: false
+        currentCigarCounter nullable: false
+        targetCigarCounter nullable: false
         cigarCounter nullable: false
         packetCounter nullable: false
         lastCigarSmokedOn nullable: true
