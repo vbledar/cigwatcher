@@ -7,8 +7,8 @@ class CampaignController extends BaseController {
 
 
     def campaign() {
-        Campaign campaign = getLoggedInUser()?.currentCampaign
-        render (view: 'campaign', model: [campaign: campaign])
+        Campaign currentCampaign = getLoggedInUser()?.currentCampaign
+        render (view: 'campaign', model: [currentCampaign: currentCampaign])
     }
 
     def createCampaign() {

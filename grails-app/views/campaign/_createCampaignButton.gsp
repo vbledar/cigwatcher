@@ -53,6 +53,7 @@
         $('#creatingCampaign').off('click').on('click', function(event) {
             var url = '<g:createLink absolute="true" controller="campaign" action="createCampaign"/>'
             console.log(url);
+            console.log(url);
 
             $.mobile.changePage(url);
 

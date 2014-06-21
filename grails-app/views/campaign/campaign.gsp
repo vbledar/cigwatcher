@@ -29,15 +29,13 @@
 </content>
 
 
-<div class="info-panel">
-
-    <h1>
-
-    </h1>
+<div class="info-panel" style="padding: 15px;">
+    <g:render template="currentCampaign" model="[currentCampaign: currentCampaign]" />
 </div>
 
-<g:render template="createCampaignButton" />
+<div class="spacer20"></div>
 
+<g:render template="createCampaignButton" />
 
 </body>
 </html>
