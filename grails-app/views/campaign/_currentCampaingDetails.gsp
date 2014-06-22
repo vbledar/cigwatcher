@@ -13,18 +13,14 @@
             <label>
                 <g:message code="cigars.per.day" args="['Current']" />
             </label>
-        </li>
-        <li>
-            <input type="range" value="${currentCampaign?.currentCigarCounter}" min="0" max="50" data-highlight="true" readonly>
+            <input type="number" value="${currentCampaign?.currentCigarCounter}" min="0" max="50" data-highlight="true" readonly>
         </li>
 
         <li class="ui-field-contain" >
             <label>
                 <g:message code="cigars.per.day" args="['Current']" />
             </label>
-        </li>
-        <li>
-            <input type="range" value="${currentCampaign?.targetCigarCounter}" min="0" max="50" data-highlight="true" readonly>
+            <input type="number" value="${currentCampaign?.targetCigarCounter}" min="0" max="50" data-highlight="true" readonly>
         </li>
     </ul>
 

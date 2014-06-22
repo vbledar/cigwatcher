@@ -6,16 +6,21 @@ import org.cigwatcher.model.campaign.Campaign
 class CampaignController extends BaseController {
 
 
+    def campaignService
+
+    // render campaign
     def campaign() {
         Campaign currentCampaign = getLoggedInUser()?.currentCampaign
         render (view: 'campaign', model: [currentCampaign: currentCampaign])
     }
 
+    // render create campaign
     def createCampaign() {
         Campaign campaign = new Campaign()
         render (view: 'createCampaign', model: [campaign: campaign])
     }
 
+    // create campaign
     def persistCampaign() {
 
         // create campaign instnace
@@ -56,5 +61,16 @@ class CampaignController extends BaseController {
 
         log.error 'Redirecting to campaign.'
         redirect (action: 'campaign')
+    }
+
+    // start current campaign
+    def startCampaign() {
+        campaignService.startCampaign(getLoggedInUser())
+        redirect (action: 'campaign')
+    }
+
+    // start interval
+    def startInterval() {
+
     }
 }
