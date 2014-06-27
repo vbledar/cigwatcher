@@ -10,11 +10,12 @@ class Packet {
 
     static hasOne = [packetInfo: PacketInfo]
 
-    static belongsTo = [user: User, campaign: Campaign]
+    static belongsTo = [user: User, campaign: Campaign, campaignInterval: CampaignInterval]
 
     static constraints = {
         packetInfo nullable: false
         user nullable: false
         campaign nullable: true
+        campaignInterval nullable: true
     }
 }

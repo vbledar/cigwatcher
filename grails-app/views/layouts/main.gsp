@@ -12,7 +12,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <r:require modules="application, maincss, jquery, jquerymobile " />
+        <r:require modules="maincss, jquery, application, jquerymobile, charting" />
 
 		<g:layoutHead/>
         <r:layoutResources />
@@ -55,6 +55,72 @@
 
         %{-- Page Content --}%
         <div role="main" class="ui-content">
+
+            <g:if test="${flash.message}">
+                <div class="user-informational-message">
+                    <table>
+                        <tr>
+                            <td>
+                                <g:img dir="images" file="dialog-info.png" style="width: 25px; height: 25px;"/>
+                            </td>
+                            <td style="padding-right: 20px;">
+                                ${flash.message}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="spacer15"></div>
+            </g:if>
+            <g:elseif test="${flash.success}">
+                <div class="user-success-message">
+                    <table>
+                        <tr>
+                            <td>
+                                <g:img dir="images" file="dialog-apply.png" style="width: 25px; height: 25px;"/>
+                            </td>
+                            <td style="padding-right: 20px;">
+                                ${flash.success}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="spacer15"></div>
+            </g:elseif>
+            <g:elseif test="${flash.warning}">
+                <div class="user-warning-message">
+                    <table>
+                        <tr>
+                            <td>
+                                <g:img dir="images" file="dialog-warning.png" style="width: 25px; height: 25px;"/>
+                            </td>
+                            <td style="padding-right: 20px;">
+                                ${flash.warning}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="spacer15"></div>
+            </g:elseif>
+            <g:elseif test="${flash.error}">
+                <div class="user-error-message">
+                    <table>
+                        <tr>
+                            <td>
+                                <g:img dir="images" file="dialog-error.png" style="width: 25px; height: 25px;"/>
+                            </td>
+                            <td style="padding-right: 20px;">
+                                ${flash.error}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="spacer15"></div>
+            </g:elseif>
+
             <g:layoutBody/>
         </div>
 

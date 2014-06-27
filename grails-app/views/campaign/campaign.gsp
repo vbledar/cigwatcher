@@ -28,12 +28,13 @@
     </h1>
 </content>
 
+<g:if test="${currentCampaign}">
+    <div class="info-panel" style="padding: 15px;">
+        <g:render template="currentCampaign" model="[currentCampaign: currentCampaign]" />
+    </div>
 
-<div class="info-panel" style="padding: 15px;">
-    <g:render template="currentCampaign" model="[currentCampaign: currentCampaign]" />
-</div>
-
-<div class="spacer20"></div>
+    <div class="spacer20"></div>
+</g:if>
 
 <g:render template="createCampaignButton" />
 

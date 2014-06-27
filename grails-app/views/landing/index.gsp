@@ -24,6 +24,10 @@
 
 <body>
 
+    <content tag="pageElementCreation">
+        <div data-role="page" id="mainui" data-theme="b">
+    </content>
+
     <content tag="headerNavigation">
         <div data-role="header">
             <h1>
@@ -40,12 +44,12 @@
                     <g:message code="register.button.label" default="Register" />
                 </g:link>
 
-                <a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn-right neon-shadow-light" data-icon="power">
+                <a id="showLoginScreen" href="#" class="ui-btn-right neon-shadow-light" data-icon="power">
                     <g:message code="login.button.label" default="Login" />
                 </a>
             </g:if>
             <g:else>
-                <g:link controller="user" action="deauthorizeUser" class="ui-btn-right neon-shadow-light">
+                <g:link controller="user" action="deauthorizeUser" class="ui-btn-right neon-shadow-light" data-icon="lock" data-ajax="false">
                     <g:message code="logout.button.label" default="Logout" />
                 </g:link>
             </g:else>

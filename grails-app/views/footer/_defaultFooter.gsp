@@ -11,7 +11,7 @@
             </g:link>
         </li>
         <li>
-            <g:link controller="report" action="index" data-icon="grid" class="${controllerName.equalsIgnoreCase("report") ? 'ui-btn-active' : ''}">
+            <g:link controller="report" action="campaignIntervalsReport" data-icon="grid" class="${controllerName.equalsIgnoreCase("report") ? 'ui-btn-active' : ''}">
                 <g:message code="reports.page.link.label" default="Reports" />
             </g:link>
         </li>
@@ -21,5 +21,4 @@
             </g:link>
         </li>
     </ul>
-
 </div>

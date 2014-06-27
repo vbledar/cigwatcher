@@ -1,3 +1,26 @@
+/**
+ * Attach event on page container show.
+ */
+$( document ).on( "pagecontainershow", function ( event, ui ) {
+    console.log('Page container show is called.');
+
+    // retrieve active page and active page id
+    var activePage = $.mobile.pageContainer.pagecontainer( "getActivePage" );
+    var activePageId = $(activePage).attr('id');
+    console.log('Active page is: ' + activePageId);
+
+    // based on active page id determine which element event
+    // handlers you require to attach
+    if (activePageId == 'mainui') {
+        attachEventHandlersOnMainPage();
+    } if (activePageId === 'campaign') {
+        attachEventHandlersOnCampaignPage();
+    } else if (activePage === 'settings') {
+        attachEventHandlersOnSettingsPage();
+    }
+});
+
+
 if (typeof jQuery !== 'undefined') {
 	(function($) {
 		$('#spinner').ajaxStart(function() {

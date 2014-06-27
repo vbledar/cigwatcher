@@ -7,6 +7,15 @@ class BaseController {
     // dependency injection of base service instance
     def baseService
 
+    public authorized() {
+        if (session == null || session.isNew() || session["user"] == null) {
+            log.error 'Interceptor fired on authorized entry...'
+            flash.sessionexpired = true
+            redirect (controller: 'landing', action: 'index')
+            return false
+        }
+    }
+
     /**
      * Store user object in session.
      *

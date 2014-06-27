@@ -59,7 +59,7 @@ class Campaign {
         packetCounter nullable: false
         lastCigarSmokedOn nullable: true
         lastPacketBoughtOn nullable: true
-        campaignInterval nullable: false
+        campaignInterval nullable: true
         startedOn nullable: true
         successful nullable: false
         completed nullable: false
@@ -68,6 +68,16 @@ class Campaign {
         intervals nullable: true
     }
 
+    static mapping = {
+        intervals sort: 'startDate', order: 'desc'
+    }
+
+    /**
+     * Calculates the difference from current cigars smoked per day and target cigars smoked
+     * per day.
+     *
+     * @return <code>Integer</code> the difference between the two values.
+     */
     Integer calculateDifference() {
         return currentCigarCounter - targetCigarCounter
     }

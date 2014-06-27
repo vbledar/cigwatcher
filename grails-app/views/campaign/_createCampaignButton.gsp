@@ -1,4 +1,4 @@
-<div id="creatingCampaign" class="neon-shadow-light ui-button-orange">
+<div id="createCampaign" class="neon-shadow-light ui-button-orange">
     <div class="ui-grid-a default-informational">
         <div class="ui-block-a">
             <h2>
@@ -45,19 +45,4 @@
         </div>
     </div>
 </div>
-
-<g:javascript>
-
-    $(function() {
-
-        $('#creatingCampaign').off('click').on('click', function(event) {
-            var url = '<g:createLink absolute="true" controller="campaign" action="createCampaign"/>'
-            console.log(url);
-            console.log(url);
-
-            $.mobile.changePage(url);
-
-        });
-    });
-
-</g:javascript>
+<g:form name="createCampaignForm" controller="campaign" action="createCampaign" />

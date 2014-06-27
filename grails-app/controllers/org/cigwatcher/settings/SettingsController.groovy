@@ -15,6 +15,8 @@ class SettingsController extends BaseController {
     // dependency injection of the settings service
     def settingsService
 
+    def beforeInterceptor = [action: this.&authorized, except: 'index']
+
     // render settings page
     def settings() {
 
@@ -49,7 +51,7 @@ class SettingsController extends BaseController {
         PacketInfo packetInfo = PacketInfo.get(params[INSTANCE_ID])
 
         if (!packetInfo) {
-            message(code: 'instance.object.not.found.for.id', args: [params[INSTANCE_ID], PacketInfo.class.name])
+            flash.error = message(code: 'instance.object.not.found.for.id', args: [params[INSTANCE_ID], PacketInfo.class.name])
             params.remove(RETURN_EXECUTION)
             return;
         }
@@ -61,8 +63,7 @@ class SettingsController extends BaseController {
 
         PacketInfo packetInfo = PacketInfo.get(params.id)
         if (!packetInfo) {
-            message(code: 'instance.object.not.found.for.id', args: [params[INSTANCE_ID], PacketInfo.class.name])
-            log.error flash.message
+            flash.error = message(code: 'instance.object.not.found.for.id', args: [params[INSTANCE_ID], PacketInfo.class.name])
             settings()
             return
         }
@@ -96,7 +97,7 @@ class SettingsController extends BaseController {
     def deletePacketInfo() {
         PacketInfo packetInfo = PacketInfo.get(params[INSTANCE_ID])
         if (!packetInfo) {
-            flash.message = message(code: 'instance.object.not.found.for.id', args: [params[INSTANCE_ID], PacketInfo.class.name])
+            flash.error = message(code: 'instance.object.not.found.for.id', args: [params[INSTANCE_ID], PacketInfo.class.name])
             return
         }
         packetInfo.delete(flush: true)

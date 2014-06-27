@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="ui-block-b" style="padding: 5px;">
-                    <input type="submit" value="<g:message code='update.button.label' default='Update' />" data-icon="user">
+                    <input type="submit" value="<g:message code='create.campaign.button.label' default='Create Campaign' />" data-icon="user" data-ajax="false">
                 </div>
             </fieldset>
         </li>
