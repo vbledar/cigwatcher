@@ -60,6 +60,9 @@
         </g:if>
     </content>
 
+    <g:if test="${session.user}">
+        <g:render template="notifications/nextCigarNotification" />
+    </g:if>
 
     <g:if test="${session.user}">
         <content tag="footerView">
