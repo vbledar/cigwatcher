@@ -30,7 +30,7 @@
             Campaign Interval Reporting
         </h3>
     </div>
-    <canvas id="campaignIntervalReport" data-type="Line" width="600" height="400" style="width: 600px; height: 400px;"></canvas>
+    <canvas id="campaignIntervalReport" data-type="Line" width="90%" height="400" style="width: 600px; height: 400px;"></canvas>
 </div>
 
 <g:javascript>
