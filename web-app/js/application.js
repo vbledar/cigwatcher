@@ -12,6 +12,16 @@ $( document ).on( "pagecontainershow", function ( event, ui ) {
     // based on active page id determine which element event
     // handlers you require to attach
     if (activePageId == 'mainui') {
+
+        var durationInSeconds = $('#duration-in-seconds').val();
+        console.log('Duration in seconds: ' + durationInSeconds)
+        var clock = $('.next-cigar-counter').FlipClock(parseInt(durationInSeconds), {
+            clockFace: 'HourlyCounter',
+            countdown: true,
+            showDays: false,
+            showSeconds: true
+        });
+
         attachEventHandlersOnMainPage();
     } if (activePageId === 'campaign') {
         attachEventHandlersOnCampaignPage();

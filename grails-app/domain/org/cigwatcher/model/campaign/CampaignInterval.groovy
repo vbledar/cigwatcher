@@ -75,4 +75,46 @@ class CampaignInterval {
             return startDate + smokePeriod.minutes
         }
     }
+
+    /**
+     * Retrieves the next cigar date and checks if it is in the past.
+     *
+     * @return <code>Boolean.TRUE</code> if the next cigar date is in
+     * the past, <code>Boolean.FALSE</code> otherwise.
+     */
+    Boolean nextCigarTimePassed() {
+        Date nextCigarTime = this.calculateNextCigarDate()
+        if(nextCigarTime.after(new Date())) {
+            return Boolean.FALSE
+        } else {
+            return Boolean.TRUE
+        }
+    }
+
+    /**
+     * Calculate next cigar duration in seconds. If the time has passed, then
+     * 0 is returned by default.
+     *
+     * @return <code>int</code> the duration until the next cigar date, or zero
+     * if that time has passed.
+     */
+    def nextCigarDurationInSecondsFromNow() {
+        if (this.nextCigarTimePassed()) {
+            return 0
+        }
+
+        use(groovy.time.TimeCategory) {
+            log.error "Next cigar date is: " + this.calculateNextCigarDate()
+            log.error "Current date is: " + (new Date())
+
+//            def until = calculateNextCigarDate().seconds
+//            def from = (new Date()).seconds
+
+            def duration = calculateNextCigarDate() - (new Date())
+            def difference = duration.days * 86400 + duration.hours * 3600 + duration.minutes * 60 + duration.seconds
+
+            log.error "Duration in seconds is: " + difference
+            return difference
+        }
+    }
 }

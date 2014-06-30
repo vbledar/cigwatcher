@@ -12,11 +12,11 @@ modules = {
         resource url: 'js/jquery-mobile/jquery.mobile-1.4.2.js'
     }
 
-    flipcountdown {
+    flipclock {
         dependsOn('jquery')
 
-        resource url: 'js/flipcountdown-master/jquery.flipcountdown.js'
-        resource url: 'js/flipcountdown-master/jquery.flipcountdown.css'
+        resource url: 'css/flipclock.css'
+        resource url: 'js/flipclock.js'
     }
 
     charting {
