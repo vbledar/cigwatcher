@@ -43,20 +43,5 @@
     </div>
     <canvas data-type="Line" width="600" height="400" style="width: 600px; height: 400px;"></canvas>
 </div>
-
-<g:javascript>
-
-    $(document).on('ready', function() {
-        console.log(${data});
-        %{--//Get context with jQuery - using jQuery's .get() method.--}%
-        %{--var canvas = document.getElementById("campaignIntervalReport");--}%
-        %{--var ctx = canvas.getContext("2d");--}%
-
-        %{--var myNewChart = new Chart(ctx);--}%
-        %{--new Chart(ctx).Line(${data});--}%
-    });
-
-</g:javascript>
-
 </body>
 </html>
