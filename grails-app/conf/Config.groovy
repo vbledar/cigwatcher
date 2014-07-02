@@ -90,6 +90,8 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    error 'grails.org.cigwatcher'
 }
 
 // Added by the JQuery Validation UI plugin:

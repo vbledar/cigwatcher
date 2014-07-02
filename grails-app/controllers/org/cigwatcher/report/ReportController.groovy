@@ -18,6 +18,7 @@ class ReportController extends BaseController {
      * is being generated for.
      */
     def campaignIntervalsReport() {
+        log.error 'Generating campaign interval report...'
 
         def builder = reportingService.gerenateCampaignIntervalDataForUserWithPrediction(getLoggedInUser())
         render (view: 'campaignReportingIntervals', model: [data: builder.toPrettyString()])
@@ -26,5 +27,23 @@ class ReportController extends BaseController {
     def campaignIntervalReportPrediction() {
         def builder = reportingService.gerenateCampaignIntervalDataForUserWithPrediction(getLoggedInUser())
         render (view: 'campaignReportingIntervals', model: [data: builder.toPrettyString()])
+    }
+
+    def ajaxCampaignIntervalReport() {
+
+        def builder = reportingService.gerenateCampaignIntervalDataForUser(getLoggedInUser())
+        render (contentType: 'application/json') {
+            ['success': true, 'reportData': builder.toPrettyString()]
+        }
+
+    }
+
+    def ajaxCampaignIntervalReportPrediction() {
+
+        def builder = reportingService.gerenateCampaignIntervalDataForUserWithPrediction(getLoggedInUser())
+        render (contentType: 'application/json') {
+            ['success': true, 'reportData': builder.toPrettyString()]
+        }
+
     }
 }

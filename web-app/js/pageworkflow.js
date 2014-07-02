@@ -17,15 +17,6 @@ function attachEventHandlersOnMainPage() {
 }
 
 /**
- * Attach event handlers on settings page.
- */
-function attachEventHandlersOnSettingsPage() {
-    $('settings').on("pagecontainertransition", function(event, ui) {
-        console.log('Settings page shown...');
-    })
-}
-
-/**
  * Attach event handlers on campaign page.
  */
 function attachEventHandlersOnCampaignPage() {
@@ -60,4 +51,13 @@ function attachEventHandlersOnCampaignPage() {
         var url = $('#startNewIntervalInCampaign').attr('action');
         window.location.href = url;
     });
+}
+
+/**
+ * Attach event handlers on settings page.
+ */
+function attachEventHandlersOnSettingsPage() {
+    $('settings').on("pagecontainertransition", function(event, ui) {
+        console.log('Settings page shown...');
+    })
 }

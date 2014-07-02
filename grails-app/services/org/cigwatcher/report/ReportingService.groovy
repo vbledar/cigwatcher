@@ -4,6 +4,7 @@ import groovy.json.JsonBuilder
 import org.cigwatcher.model.campaign.Campaign
 import org.cigwatcher.model.campaign.CampaignInterval
 import org.cigwatcher.model.user.User
+import org.springframework.transaction.annotation.Transactional
 
 class ReportingService {
 
@@ -11,17 +12,21 @@ class ReportingService {
     def campaignService
 
     def gerenateCampaignIntervalDataForUser(User user) {
+        log.error 'Generating campaign interval data for user...'
 
         // generate campaign interval report data for user's current campaign
         return generateCampaignIntervalData(user.currentCampaign)
 
     }
 
+    @Transactional (readOnly = true)
     def gerenateCampaignIntervalDataForUserWithPrediction(User user) {
+        log.error 'Generating campaign interval data for user with prediction...'
 
         // generate campaign interval report data for user's current campaign
         // along with next intervals
         Campaign campaign = user.currentCampaign
+        log.error 'Campaign complted: ' + campaign.completed
 
         CampaignInterval campaignInterval
         while (!campaign.completed) {
@@ -35,7 +40,7 @@ class ReportingService {
             campaign.addToIntervals(campaignInterval)
         }
 
-        return generateCampaignIntervalData(campaign)
+        def data = generateCampaignIntervalData(campaign)
 
     }
 

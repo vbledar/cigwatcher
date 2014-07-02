@@ -14,13 +14,18 @@ class CampaignService {
         CampaignInterval campaignInterval = new CampaignInterval()
 
         // find this interval's index
-        Integer intervalIndex = campaign.intervals.size() + 1
+        Integer intervalIndex = campaign.intervals.size()
+        log.error 'Interval Index: ' + intervalIndex
 
         // calculate number of cigars to decrease in this interval
         Integer cigarCounter = intervalIndex / campaign.decreaseDaysCounter
+        log.error 'Cigar Counter: ' + cigarCounter
+        log.error 'Decrease days counter is: ' + campaign.decreaseDaysCounter
 
         // initialize the interval
         campaignInterval.cigarCounter = campaign.currentCigarCounter - cigarCounter
+        log.error 'Campaign interval cigar counter is: ' + campaignInterval.cigarCounter
+
         campaignInterval.startDate = new Date()
         campaignInterval.campaign = campaign
 

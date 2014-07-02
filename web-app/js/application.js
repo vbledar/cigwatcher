@@ -23,9 +23,12 @@ $( document ).on( "pagecontainershow", function ( event, ui ) {
         });
 
         attachEventHandlersOnMainPage();
-    } if (activePageId === 'campaign') {
+    } else if (activePageId === 'campaign') {
         attachEventHandlersOnCampaignPage();
-    } else if (activePage === 'settings') {
+    } else if (activePageId === 'reporting') {
+        console.log('Calling build reports...');
+        buildReports();
+    } else if (activePageId === 'settings') {
         attachEventHandlersOnSettingsPage();
     }
 });

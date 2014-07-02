@@ -4,6 +4,7 @@ modules = {
 
         resource url:'js/application.js'
         resource url:'js/pageworkflow.js'
+        resource url:'js/reporting.js'
     }
 
     jquerymobile {
