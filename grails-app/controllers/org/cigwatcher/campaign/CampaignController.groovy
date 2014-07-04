@@ -2,6 +2,7 @@ package org.cigwatcher.campaign
 
 import org.cigwatcher.BaseController
 import org.cigwatcher.model.campaign.Campaign
+import org.cigwatcher.model.campaign.CampaignInterval
 import org.cigwatcher.model.settings.PacketInfo
 import org.cigwatcher.model.user.User
 
@@ -158,7 +159,10 @@ class CampaignController extends BaseController {
         // get logged in user instance
         User user = getLoggedInUser()
 
-        if (!campaignService.cigarSmoked(user)) {
+        // check if user skipped this cigar
+        Boolean smoked = params.getBoolean("smoked")
+
+        if (!campaignService.cigarSmoked(user, smoked)) {
             flash.message = message (code: 'smoke.cigar.added.failure', default: 'Failed to add new smoke cigar. Please, try again later.')
         } else {
             flash.success = message (code: 'smoke.cigar.added.successfully', default: 'Cigar added successfully')
@@ -168,6 +172,39 @@ class CampaignController extends BaseController {
             redirect (url: redirectUrl)
         } else {
             redirect (controller: 'landing', action: 'index')
+        }
+    }
+
+    def ajaxAddCigarToCampaignInterval() {
+        // get logged in user instance
+        User user = getLoggedInUser()
+
+        // check if user skipped this cigar
+        Boolean smoked = params.getBoolean("smoked")
+
+        log.error params
+        log.error 'Cigar smoked: ' + smoked
+
+        if (!campaignService.cigarSmoked(user, smoked)) {
+            flash.message = message (code: 'smoke.cigar.added.failure', default: 'Failed to add new smoke cigar. Please, try again later.')
+            render (contentType: 'application/json') {
+                ['success': false, 'message': flash.message]
+            }
+        } else {
+            CampaignInterval campaignInterval
+            int durationInSeconds
+            if (session["user"]) {
+                campaignInterval = getLoggedInUser()?.currentCampaign?.campaignInterval
+                if (campaignInterval) {
+                    durationInSeconds = campaignInterval.nextCigarDurationInSecondsFromNow()
+                }
+
+            }
+
+            flash.success = message (code: 'smoke.cigar.added.successfully', default: 'Cigar added successfully')
+            render (contentType: 'application/json') {
+                ['success': true, 'message': flash.message, 'durationInSeconds': durationInSeconds]
+            }
         }
     }
 }

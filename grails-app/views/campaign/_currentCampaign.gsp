@@ -40,7 +40,7 @@
                             <td style="vertical-align: middle; text-align: center">
                                 <h4 class="header-title">
                                     <g:message code="add.cigar.smoked.interval.button.label" default="Cigar Smoked" />
-                                    <g:form name="addSmokedCigarInInterval" controller="campaign" action="addCigarToCampaignInterval" />
+                                    <g:form name="addSmokedCigarInInterval" controller="campaign" action="addCigarToCampaignInterval" params="[smoked: Boolean.TRUE]"/>
                                 </h4>
                             </td>
                         </tr>
@@ -103,7 +103,7 @@
 </div>
 
 <g:javascript>
-    jQuery(function(){
-        jQuery('#flipcountdownbox1').flipcountdown();
-    })
+//    jQuery(function(){
+//        jQuery('#flipcountdownbox1').flipcountdown();
+//    })
 </g:javascript>

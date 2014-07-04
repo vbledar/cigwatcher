@@ -60,14 +60,14 @@
                     <label>
                         <g:message code="last.cigar.smoked.on" default="Last cigar smoked on..."/>
                     </label>
-                    <input type="datetime" value="${formatDate(date: currentCampaign?.lastCigarSmokedOn, format: 'dd-MM-yyyy HH:mm')}" readonly>
+                    <input type="datetime" value="${formatDate(date: currentCampaign?.lastCigarSmokedOn, format: 'dd/MM/yyyy HH:mm')}" readonly>
                 </li>
 
                 <li>
                     <label>
                         <g:message code="last.packet.bought.on" default="Last packet bought on..." />
                     </label>
-                    <input type="datetime" value="${formatDate(date: currentCampaign?.lastPacketBoughtOn, format: 'dd-MM-yyyy HH:mm')}" readonly>
+                    <input type="datetime" value="${formatDate(date: currentCampaign?.lastPacketBoughtOn, format: 'dd/MM/yyyy HH:mm')}" readonly>
                 </li>
             </ul>
         </div>

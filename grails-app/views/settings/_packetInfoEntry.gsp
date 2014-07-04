@@ -16,7 +16,7 @@
             </li>
             <li>
                 <p>
-                    <g:message code="packet.info.description.last.packet.date" args="[packetInformation?.lastPacketBought ? packetInformation : 'unknown']" />
+                    <g:message code="packet.info.description.last.packet.date" args="[packetInformation?.lastPacketBought ? packetInformation?.lastPacketBought : 'unknown']" />
                 </p>
             </li>
             <li>

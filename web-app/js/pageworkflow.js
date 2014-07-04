@@ -4,19 +4,6 @@
 
 
 /**
- * Attach event handlers on main page.
- */
-function attachEventHandlersOnMainPage() {
-    console.log('Attach event handler on main ui page show...');
-
-    $('#showLoginScreen').off('click').on('click', function(event) {
-        console.log('Open the popup requested.');
-        event.preventDefault();
-        $('#popupLogin').popup ("open", {'positionTo': 'window', 'transition': 'pop'})
-    })
-}
-
-/**
  * Attach event handlers on campaign page.
  */
 function attachEventHandlersOnCampaignPage() {

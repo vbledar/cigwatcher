@@ -1,8 +1,10 @@
 modules = {
     application {
         dependsOn('jquery')
+        dependsOn('flipclock')
 
         resource url:'js/application.js'
+        resource url:'js/mainui.js'
         resource url:'js/pageworkflow.js'
         resource url:'js/reporting.js'
     }

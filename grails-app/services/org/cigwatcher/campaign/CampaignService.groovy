@@ -120,6 +120,19 @@ class CampaignService {
 
         def packet = new Packet(packetInfo: packetInfo)
 
+        // apply changes on packet info
+        packetInfo.addToPackets(packet);
+        packetInfo.packetsBought++
+        packetInfo.lastPacketBought = new Date()
+
+        if (!packetInfo.save()) {
+            log.error 'Failed to apply changes on packet info'
+            packetInfo.errors.each {
+                log.error it
+            }
+            return Boolean.FALSE
+        }
+
         // apply changes on user
         if (user) {
             user.addToPackets(packet)
@@ -176,13 +189,14 @@ class CampaignService {
         return Boolean.TRUE
     }
 
-    def cigarSmoked(User user) {
-        return cigarSmoked(user, user.currentCampaign, user.currentCampaign.campaignInterval)
+    def cigarSmoked(User user, Boolean smoked) {
+        return cigarSmoked(user, user.currentCampaign, user.currentCampaign.campaignInterval, smoked)
     }
 
-    def cigarSmoked(User user, Campaign campaign, CampaignInterval campaignInterval) {
+    def cigarSmoked(User user, Campaign campaign, CampaignInterval campaignInterval, Boolean smoked) {
 
         def smokeCigar = new SmokeCigar()
+        smokeCigar.smoked = smoked
         smokeCigar.shouldBeSmokedOn = campaignInterval.calculateNextCigarDate()
 
         // apply changes on campaign

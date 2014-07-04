@@ -17,14 +17,16 @@
 
     <div class="ui-grid-a">
         <div class="ui-block-a" style="padding: 5px;">
-            <button id="skippedThisCigar" class="ui-btn ui-corner-all neon-shadow-light">
+            <button id="skippedThisCigar" form-id="skippedThisCigarForm" class="ui-btn ui-corner-all neon-shadow-light">
                 Skip This Time
             </button>
+            <g:form name="skippedThisCigarForm" controller="campaign" action="ajaxAddCigarToCampaignInterval"></g:form>
         </div>
         <div class="ui-block-b" style="padding: 5px;">
-            <button id="smokedThisCigar" class="ui-btn ui-corner-all neon-shadow-light">
+            <button id="smokedThisCigar" form-id="smokedThisCigarForm" class="ui-btn ui-corner-all neon-shadow-light">
                 Smoked This One
             </button>
+            <g:form name="smokedThisCigarForm" controller="campaign" action="ajaxAddCigarToCampaignInterval"></g:form>
         </div>
     </div>
 </div>

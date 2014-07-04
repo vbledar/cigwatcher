@@ -1,7 +1,7 @@
 <li id="packet-info-entry-${campaignInterval?.id}" class="${campaignInterval?.successful ? 'listview-success-entry' : 'listview-fail-entry'}">
     <g:link controller="settings" action="settings" params="[service: 'packetInformation', instanceId: packetInformation?.id, execreturn: Boolean.TRUE]">
         <h2>
-            ${campaignInterval?.startDate}
+            <g:formatDate date="${campaignInterval?.startDate}" format="dd/MM/yyyy HH:mm" />
         </h2>
 
         <p class="ui-li-aside">
