@@ -111,3 +111,68 @@ function execARWithSuccessAndErrorCallbacks(event, element, actionUrl, parameter
         errorCallback(event, element, data);
     });
 }
+
+
+/**
+ * Show information message to user.
+ *
+ * @param message, the message to show.
+ */
+function showInformationMessage(message) {
+    $('div.user-informational-message td#message-holder').html(message);
+    $('div.user-informational-message').removeClass('hidden');
+}
+
+/**
+ * Show success message to user.
+ *
+ * @param message, the message to show.
+ */
+function showSuccessMessage(message) {
+    $('div.user-success-message td#message-holder').html(message);
+    $('div.user-success-message').removeClass('hidden');
+}
+
+/**
+ * Show warning message to user.
+ *
+ * @param message, the message to show.
+ */
+function showWarningMessage(message) {
+    $('div.user-warning-message td#message-holder').html(message);
+    $('div.user-warning-message').removeClass('hidden');
+}
+
+/**
+ * Show error message to user.
+ *
+ * @param message, the message to show.
+ */
+function showErrorMessage(message) {
+    $('div.user-error-message td#message-holder').html(message);
+    $('div.user-error-message').removeClass('hidden');
+}
+
+/**
+ * Show message to user. The type of the message is defined by the
+ * provided type parameter. If the type parameter is not resolved
+ * the an information message is show.
+ *
+ * @param type, the message type to show which can be any of the
+ * following information, success, warning, error.
+ *
+ * @param message, the message to show.
+ */
+function showMessageToUser(type, message) {
+    if (type === 'information') {
+        showInformationMessage();
+    } else if (type === 'success') {
+        showSuccessMessage(message);
+    } else if (type === 'warning') {
+        showWarningMessage(message);
+    } else if (type === 'error') {
+        showErrorMessage(message);
+    } else {
+        showInformationMessage(message);
+    }
+}

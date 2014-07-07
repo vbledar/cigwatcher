@@ -12,7 +12,7 @@ class ReportingService {
     def campaignService
 
     def gerenateCampaignIntervalDataForUser(User user) {
-        log.error 'Generating campaign interval data for user...'
+        log.debug 'Generating campaign interval data for user...'
 
         // generate campaign interval report data for user's current campaign
         return generateCampaignIntervalData(user.currentCampaign)
@@ -21,16 +21,16 @@ class ReportingService {
 
     @Transactional (readOnly = true)
     def gerenateCampaignIntervalDataForUserWithPrediction(User user) {
-        log.error 'Generating campaign interval data for user with prediction...'
+        log.debug 'Generating campaign interval data for user with prediction...'
 
         // generate campaign interval report data for user's current campaign
         // along with next intervals
         Campaign campaign = user.currentCampaign
-        log.error 'Campaign complted: ' + campaign.completed
+        log.debug 'Campaign completed: ' + campaign.completed
 
         CampaignInterval campaignInterval
         while (!campaign.completed) {
-            log.error 'Adding new campaign interval...'
+            log.debug 'Adding new campaign interval...'
             campaignInterval = campaignService.createCampaignInterval(campaign)
 
             if (campaignInterval.cigarCounter == campaign.targetCigarCounter) {

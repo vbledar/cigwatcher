@@ -56,14 +56,14 @@
         %{-- Page Content --}%
         <div role="main" class="ui-content">
 
-            <g:if test="${flash.message}">
-                <div class="user-informational-message">
+            %{--<g:if test="${flash.message}">--}%
+                <div class="user-informational-message ${flash.error ? '' : 'hidden'}">
                     <table>
                         <tr>
                             <td>
                                 <g:img dir="images" file="dialog-info.png" style="width: 25px; height: 25px;"/>
                             </td>
-                            <td style="padding-right: 20px;">
+                            <td id="message-holder" style="padding-right: 20px;">
                                 ${flash.message}
                             </td>
                         </tr>
@@ -71,15 +71,15 @@
                 </div>
 
                 <div class="spacer15"></div>
-            </g:if>
-            <g:elseif test="${flash.success}">
-                <div class="user-success-message">
+            %{--</g:if>--}%
+            %{--<g:elseif test="${flash.success}">--}%
+                <div class="user-success-message ${flash.error ? '' : 'hidden'}">
                     <table>
                         <tr>
                             <td>
                                 <g:img dir="images" file="dialog-apply.png" style="width: 25px; height: 25px;"/>
                             </td>
-                            <td style="padding-right: 20px;">
+                            <td id="message-holder" style="padding-right: 20px;">
                                 ${flash.success}
                             </td>
                         </tr>
@@ -87,15 +87,15 @@
                 </div>
 
                 <div class="spacer15"></div>
-            </g:elseif>
-            <g:elseif test="${flash.warning}">
-                <div class="user-warning-message">
+            %{--</g:elseif>--}%
+            %{--<g:elseif test="${flash.warning}">--}%
+                <div class="user-warning-message ${flash.error ? '' : 'hidden'}">
                     <table>
                         <tr>
                             <td>
                                 <g:img dir="images" file="dialog-warning.png" style="width: 25px; height: 25px;"/>
                             </td>
-                            <td style="padding-right: 20px;">
+                            <td id="message-holder" style="padding-right: 20px;">
                                 ${flash.warning}
                             </td>
                         </tr>
@@ -103,15 +103,15 @@
                 </div>
 
                 <div class="spacer15"></div>
-            </g:elseif>
-            <g:elseif test="${flash.error}">
-                <div class="user-error-message">
+            %{--</g:elseif>--}%
+            %{--<g:elseif test="${flash.error}">--}%
+                <div class="user-error-message ${flash.error ? '' : 'hidden'}">
                     <table>
                         <tr>
                             <td>
                                 <g:img dir="images" file="dialog-error.png" style="width: 25px; height: 25px;"/>
                             </td>
-                            <td style="padding-right: 20px;">
+                            <td id="message-holder" style="padding-right: 20px;">
                                 ${flash.error}
                             </td>
                         </tr>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="spacer15"></div>
-            </g:elseif>
+            %{--</g:elseif>--}%
 
             <g:layoutBody/>
         </div>

@@ -5,8 +5,9 @@ modules = {
 
         resource url:'js/application.js'
         resource url:'js/mainui.js'
-        resource url:'js/pageworkflow.js'
+        resource url:'js/campaign.js'
         resource url:'js/reporting.js'
+        resource url:'js/settings.js'
     }
 
     jquerymobile {

@@ -291,3 +291,8 @@ div.error-list {
 /** ********************* **
  * Grouping object css end *
  ** ********************* **/
+
+
+.hidden {
+    display: none;
+}

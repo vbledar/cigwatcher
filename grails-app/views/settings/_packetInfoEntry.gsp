@@ -27,9 +27,29 @@
         </ul>
 
         <span class="ui-li-aside">
-            <button id="deleteEntry" data-item-id="${packetInformation?.id}" class="ui-btn ui-btn-inline ui-mini neon-shadow-light delete-packet-info-entry">
+            <g:if test="${packetInformation?.packets?.isEmpty()}">
+                <button id="deleteEntry" data-item-id="${packetInformation?.id}" action-url='<g:createLink controller="settings" action="ajaxDeletePacketInfo" />' class="ui-btn ui-btn-inline ui-mini neon-shadow-light delete-packet-info-entry">
                     <g:message code="delete.button.label" default="Delete" />
-            </button>
+                </button>
+            </g:if>
+            <g:else>
+                %{--<g:if test="${packetInformation?.visible}">--}%
+                    %{--<button id="makeEntryVisible" data-item-id="${packetInformation?.id}" action-url='<g:createLink controller="settings" action="ajaxDeletePacketInfo" />' class="ui-btn ui-btn-inline ui-mini neon-shadow-light delete-packet-info-entry">--}%
+                        %{--<g:message code="delete.button.label" default="Delete" />--}%
+                    %{--</button>--}%
+                    <label for="visible">
+                        <g:message code="visible.field.name" default="Visible"/>
+                    </label>
+                    <select class="visibility-slider" name="visible" action-url='<g:createLink controller="settings" action="ajaxVisibilityStatusPacketInfo" />' data-id="${packetInformation?.id}" data-role="slider" data-mini="true">
+                        <option value="off" ${packetInformation?.visible ? '' : 'selected=""'}>
+                            <g:message code="field.value.no" />
+                        </option>
+                        <option value="on" ${packetInformation?.visible ? 'selected=""' : ''}>
+                            <g:message code="field.value.yes" />
+                        </option>
+                    </select>
+                %{--</g:if>--}%
+            </g:else>
         </span>
     </g:link>
 </li>

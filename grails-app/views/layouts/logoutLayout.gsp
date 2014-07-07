@@ -37,6 +37,9 @@
             </g:link>
         </g:else>
 
+        <g:if test="${pageProperty(name: 'page.subHeaderNavigation')}">
+            <g:pageProperty name="page.subHeaderNavigation"/>
+        </g:if>
     </content>
 
     <g:if test="${pageProperty(name: 'page.footerView')}">

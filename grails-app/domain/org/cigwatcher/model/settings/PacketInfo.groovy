@@ -18,6 +18,8 @@ class PacketInfo {
     Date dateCreated
     Date lastUpdated
 
+    Boolean visible = Boolean.TRUE
+
     static belongsTo = [user: User]
 
     static hasMany = [packets: Packet]
@@ -29,6 +31,7 @@ class PacketInfo {
         user nullable: false
         lastPacketBought nullable: true
         packets nullable: true
+        visible nullable: true
     }
 
     Double totalPaid() {

@@ -12,7 +12,7 @@
 
     <g:hiddenField id="duration-in-seconds" name="duration-in-seconds" value="${durationInSeconds}"/>
 
-    <div class="next-cigar-counter" style="margin-left: auto; margin-right: auto; text-align: center">
+    <div class="next-cigar-counter" style="margin-left: auto; margin-right: auto; text-align: center; max-width: 470px;">
     </div>
 
     <div class="ui-grid-a">

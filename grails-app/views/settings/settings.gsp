@@ -28,10 +28,36 @@
     </h1>
 </content>
 
+<div data-role="tabs" id="tabs">
+    <div data-role="navbar" data-grid="a">
+        <ul>
+            <li>
+                <a href="#campaigntab" class="ui-btn-active" data-icon="star">
+                    <g:message code="settings.menu.campaign" default="Campaign Settings" />
+                </a>
+            </li>
+            <li>
+                <a href="#reportstab" data-icon="grid">
+                    <g:message code="settings.menu.reports" default="Report Settings" />
+                </a>
+            </li>
+        </ul>
+    </div>
 
-<g:render template="packetInfoInformation" model="[packetInformationEntries: packetInformationEntries]" />
+    <div class="spacer20"/>
 
-<g:render template="/popups.user.settings/packetInfo" />
+    <div id="campaigntab">
+        <g:render template="packetInfoInformation" model="[packetInformationEntries: packetInformationEntries]" />
+
+        <g:render template="/popups/user/settings/packetInfo" />
+    </div>
+
+    <div id="reportstab">
+        <g:render template="reportInfoInformation" model="[reportInformationEntries: reportInformationEntries]" />
+
+        <g:render template="/popups/user/settings/createReportInfoDialog" />
+    </div>
+</div>
 
 </body>
 </html>

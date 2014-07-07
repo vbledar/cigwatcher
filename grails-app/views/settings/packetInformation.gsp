@@ -94,7 +94,7 @@
             <label for="lastPacketBought">
                 <g:message code="last.packet.bought.field.name" default="Last Packet Bought On:" />
             </label>
-            <input type="date" name="lastPacketBought" id="lastPacketBought" value="${packetInformation?.lastPacketBought ? packetInformation?.lastPacketBought : ''}" data-highlight="true" readonly>
+            <input type="datetime" name="lastPacketBought" id="lastPacketBought" value="${packetInformation?.lastPacketBought ? formatDate(date: packetInformation?.lastPacketBought, format : 'dd/MM/yyyy') : ''}" data-highlight="true" readonly>
         </li>
 
         <li class="ui-body ui-body-b">

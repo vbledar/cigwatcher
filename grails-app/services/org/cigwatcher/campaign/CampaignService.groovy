@@ -9,22 +9,29 @@ import org.cigwatcher.model.user.User
 
 class CampaignService {
 
+    /**
+     * Create a new campaign interval in the given campaign.
+     *
+     * @param campaign, the campaign to update.
+     *
+     * @return the campaign interval created.
+     */
     def createCampaignInterval(Campaign campaign) {
         // create a new interval instance
         CampaignInterval campaignInterval = new CampaignInterval()
 
         // find this interval's index
         Integer intervalIndex = campaign.intervals.size()
-        log.error 'Interval Index: ' + intervalIndex
+        log.debug 'Interval Index: ' + intervalIndex
 
         // calculate number of cigars to decrease in this interval
         Integer cigarCounter = intervalIndex / campaign.decreaseDaysCounter
-        log.error 'Cigar Counter: ' + cigarCounter
-        log.error 'Decrease days counter is: ' + campaign.decreaseDaysCounter
+        log.debug 'Cigar Counter: ' + cigarCounter
+        log.debug 'Decrease days counter is: ' + campaign.decreaseDaysCounter
 
         // initialize the interval
         campaignInterval.cigarCounter = campaign.currentCigarCounter - cigarCounter
-        log.error 'Campaign interval cigar counter is: ' + campaignInterval.cigarCounter
+        log.debug 'Campaign interval cigar counter is: ' + campaignInterval.cigarCounter
 
         campaignInterval.startDate = new Date()
         campaignInterval.campaign = campaign
@@ -93,14 +100,6 @@ class CampaignService {
             }
             return Boolean.FALSE
         }
-
-//        if (!campaignInterval.save()) {
-//            log.error 'Failed to persist new campaign interval.'
-//            campaignInterval.errors.each {
-//                log.error it
-//            }
-//            return Boolean.FALSE
-//        }
 
         return Boolean.TRUE
     }
